@@ -1,0 +1,135 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'RISC_V_lite' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : RISC_V_lite
+Version: O-2018.06-SP4
+Date   : Tue Dec 22 12:18:12 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: PIPE_MEM_WB/reg_out_reg[172]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: PIPE_EX_MEM/reg_out_reg[103]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RISC_V_lite        5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  PIPE_MEM_WB/reg_out_reg[172]/CK (DFFR_X1)               0.00       0.00 r
+  PIPE_MEM_WB/reg_out_reg[172]/Q (DFFR_X1)                0.10       0.10 f
+  PIPE_MEM_WB/reg_out[172] (Reg_N176)                     0.00       0.10 f
+  FORWARDING/OP_CODE_WB[3] (Forwarding_unit)              0.00       0.10 f
+  FORWARDING/U60/ZN (NOR2_X1)                             0.05       0.15 r
+  FORWARDING/U61/ZN (NAND4_X1)                            0.04       0.19 f
+  FORWARDING/U81/ZN (NOR2_X1)                             0.05       0.24 r
+  FORWARDING/U80/ZN (INV_X1)                              0.03       0.27 f
+  FORWARDING/U72/ZN (NAND2_X1)                            0.04       0.30 r
+  FORWARDING/U71/ZN (INV_X1)                              0.03       0.33 f
+  FORWARDING/U21/ZN (NAND2_X1)                            0.03       0.37 r
+  FORWARDING/U73/ZN (INV_X1)                              0.02       0.39 f
+  FORWARDING/U12/ZN (NOR2_X1)                             0.03       0.42 r
+  FORWARDING/sel_mux_op2[2] (Forwarding_unit)             0.00       0.42 r
+  U5/Z (BUF_X1)                                           0.05       0.48 r
+  FORWARD_MUX_OP2/sel[2] (Mux_8to1_N32_1)                 0.00       0.48 r
+  FORWARD_MUX_OP2/U181/ZN (INV_X1)                        0.04       0.52 f
+  FORWARD_MUX_OP2/U194/ZN (NOR3_X1)                       0.09       0.60 r
+  FORWARD_MUX_OP2/U10/Z (BUF_X2)                          0.07       0.67 r
+  FORWARD_MUX_OP2/U8/ZN (OR2_X1)                          0.04       0.72 r
+  FORWARD_MUX_OP2/U12/ZN (NOR3_X1)                        0.03       0.74 f
+  FORWARD_MUX_OP2/U192/ZN (AOI22_X1)                      0.06       0.80 r
+  FORWARD_MUX_OP2/U164/ZN (NAND4_X1)                      0.05       0.85 f
+  FORWARD_MUX_OP2/out_mux[1] (Mux_8to1_N32_1)             0.00       0.85 f
+  MUX_FORWARD_ACTIVATE_OP2/in_1[1] (Mux_2to1_N32_3)       0.00       0.85 f
+  MUX_FORWARD_ACTIVATE_OP2/U76/ZN (AOI22_X1)              0.06       0.91 r
+  MUX_FORWARD_ACTIVATE_OP2/U5/ZN (INV_X1)                 0.03       0.94 f
+  MUX_FORWARD_ACTIVATE_OP2/out_mux[1] (Mux_2to1_N32_3)
+                                                          0.00       0.94 f
+  ALU_UNIT/input_2[1] (ALU)                               0.00       0.94 f
+  ALU_UNIT/r300/B[1] (ALU_DW01_add_0)                     0.00       0.94 f
+  ALU_UNIT/r300/U67/ZN (NAND2_X1)                         0.04       0.97 r
+  ALU_UNIT/r300/U68/ZN (NAND3_X1)                         0.05       1.02 f
+  ALU_UNIT/r300/U72/ZN (NAND2_X1)                         0.04       1.06 r
+  ALU_UNIT/r300/U74/ZN (NAND3_X1)                         0.04       1.10 f
+  ALU_UNIT/r300/U1_3/CO (FA_X1)                           0.09       1.19 f
+  ALU_UNIT/r300/U1_4/CO (FA_X1)                           0.09       1.28 f
+  ALU_UNIT/r300/U1_5/CO (FA_X1)                           0.09       1.37 f
+  ALU_UNIT/r300/U1_6/CO (FA_X1)                           0.10       1.47 f
+  ALU_UNIT/r300/U24/ZN (NAND2_X1)                         0.03       1.50 r
+  ALU_UNIT/r300/U26/ZN (NAND3_X1)                         0.04       1.54 f
+  ALU_UNIT/r300/U1_8/CO (FA_X1)                           0.10       1.64 f
+  ALU_UNIT/r300/U30/ZN (NAND2_X1)                         0.03       1.67 r
+  ALU_UNIT/r300/U32/ZN (NAND3_X1)                         0.04       1.71 f
+  ALU_UNIT/r300/U1_10/CO (FA_X1)                          0.09       1.80 f
+  ALU_UNIT/r300/U1_11/CO (FA_X1)                          0.10       1.90 f
+  ALU_UNIT/r300/U5/ZN (NAND2_X1)                          0.03       1.93 r
+  ALU_UNIT/r300/U7/ZN (NAND3_X1)                          0.04       1.97 f
+  ALU_UNIT/r300/U1_13/CO (FA_X1)                          0.09       2.06 f
+  ALU_UNIT/r300/U1_14/CO (FA_X1)                          0.10       2.16 f
+  ALU_UNIT/r300/U54/ZN (NAND2_X1)                         0.03       2.19 r
+  ALU_UNIT/r300/U56/ZN (NAND3_X1)                         0.05       2.24 f
+  ALU_UNIT/r300/U60/ZN (NAND2_X1)                         0.04       2.27 r
+  ALU_UNIT/r300/U62/ZN (NAND3_X1)                         0.04       2.31 f
+  ALU_UNIT/r300/U1_17/CO (FA_X1)                          0.09       2.40 f
+  ALU_UNIT/r300/U1_18/CO (FA_X1)                          0.09       2.49 f
+  ALU_UNIT/r300/U1_19/CO (FA_X1)                          0.10       2.59 f
+  ALU_UNIT/r300/U12/ZN (NAND2_X1)                         0.03       2.63 r
+  ALU_UNIT/r300/U14/ZN (NAND3_X1)                         0.05       2.67 f
+  ALU_UNIT/r300/U18/ZN (NAND2_X1)                         0.04       2.71 r
+  ALU_UNIT/r300/U20/ZN (NAND3_X1)                         0.04       2.75 f
+  ALU_UNIT/r300/U1_22/CO (FA_X1)                          0.09       2.84 f
+  ALU_UNIT/r300/U1_23/CO (FA_X1)                          0.09       2.93 f
+  ALU_UNIT/r300/U1_24/CO (FA_X1)                          0.09       3.02 f
+  ALU_UNIT/r300/U1_25/CO (FA_X1)                          0.09       3.11 f
+  ALU_UNIT/r300/U1_26/CO (FA_X1)                          0.09       3.20 f
+  ALU_UNIT/r300/U1_27/CO (FA_X1)                          0.10       3.30 f
+  ALU_UNIT/r300/U37/ZN (NAND2_X1)                         0.03       3.33 r
+  ALU_UNIT/r300/U39/ZN (NAND3_X1)                         0.05       3.38 f
+  ALU_UNIT/r300/U43/ZN (NAND2_X1)                         0.04       3.42 r
+  ALU_UNIT/r300/U44/ZN (NAND3_X1)                         0.05       3.47 f
+  ALU_UNIT/r300/U49/ZN (NAND2_X1)                         0.04       3.50 r
+  ALU_UNIT/r300/U50/ZN (NAND3_X1)                         0.04       3.54 f
+  ALU_UNIT/r300/U1_31/S (FA_X1)                           0.11       3.65 f
+  ALU_UNIT/r300/SUM[31] (ALU_DW01_add_0)                  0.00       3.65 f
+  ALU_UNIT/U213/ZN (AOI21_X1)                             0.04       3.69 r
+  ALU_UNIT/U7/ZN (NAND3_X1)                               0.04       3.72 f
+  ALU_UNIT/output_result[31] (ALU)                        0.00       3.72 f
+  MUX_OUT_ALU_ABS/in_0[31] (Mux_2to1_N32_1)               0.00       3.72 f
+  MUX_OUT_ALU_ABS/U78/ZN (AOI22_X1)                       0.04       3.77 r
+  MUX_OUT_ALU_ABS/U77/ZN (INV_X1)                         0.02       3.79 f
+  MUX_OUT_ALU_ABS/out_mux[31] (Mux_2to1_N32_1)            0.00       3.79 f
+  PIPE_EX_MEM/reg_in[103] (Reg_N180)                      0.00       3.79 f
+  PIPE_EX_MEM/U365/ZN (NAND2_X1)                          0.03       3.82 r
+  PIPE_EX_MEM/U3/ZN (NAND2_X1)                            0.02       3.84 f
+  PIPE_EX_MEM/reg_out_reg[103]/D (DFFR_X1)                0.01       3.85 f
+  data arrival time                                                  3.85
+
+  clock MY_CLK (rise edge)                                3.96       3.96
+  clock network delay (ideal)                             0.00       3.96
+  clock uncertainty                                      -0.07       3.89
+  PIPE_EX_MEM/reg_out_reg[103]/CK (DFFR_X1)               0.00       3.89 r
+  library setup time                                     -0.04       3.85
+  data required time                                                 3.85
+  --------------------------------------------------------------------------
+  data required time                                                 3.85
+  data arrival time                                                 -3.85
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

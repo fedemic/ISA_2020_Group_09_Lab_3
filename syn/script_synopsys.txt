@@ -1,0 +1,55 @@
+USEFUL COMMANDS ARE LISTED IN THIS FILE
+
+---------------------------------------------------------------------
+
+analyze -f vhdl -lib WORK ../src/Adder_signed.vhd
+analyze -f vhdl -lib WORK ../src/Adder_unsigned.vhd
+analyze -f vhdl -lib WORK ../src/Mux_2to1.vhd
+analyze -f vhdl -lib WORK ../src/Mux_4to1.vhd
+analyze -f vhdl -lib WORK ../src/Mux_8to1.vhd
+analyze -f vhdl -lib WORK ../src/Reg.vhd
+analyze -f vhdl -lib WORK ../src/ALU.vhd
+analyze -f vhdl -lib WORK ../src/Control_unit.vhd
+analyze -f vhdl -lib WORK ../src/Forwarding_unit.vhd
+analyze -f vhdl -lib WORK ../src/Hazard_detection_unit.vhd
+analyze -f vhdl -lib WORK ../src/Immediate_unit.vhd
+analyze -f vhdl -lib WORK ../src/NOP_generation_unit.vhd
+analyze -f vhdl -lib WORK ../src/Register_file.vhd
+analyze -f vhdl -lib WORK ../src/RISC_V_lite.vhd
+
+set power_preserve_rtl_hier_names true
+elaborate RISC_V_lite -arch Behavior -lib work > report/elaborate.txt
+
+uniquify
+link
+
+create_clock -name MY_CLK -period 3.95 CLOCK
+set_dont_touch_network MY_CLK
+set_clock_uncertainty 0.07 [get_clocks MY_CLK]
+set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] CLOCK]
+set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+
+set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+set_load $OLOAD [all_outputs]
+
+compile
+
+report_timing > report/report_timing_3_95_ns.txt
+report_area > report/report_area_3_95_ns.txt
+
+ungroup -all -flatten
+
+change_names -hierarchy -rules verilog
+write_sdf netlist/RISC_V_lite.sdf
+write -f verilog -hierarchy -output netlist/RISC_V_lite.v
+write_sdc netlist/RISC_V_lite.sdc
+
+
+MODELSIM
+
+vsim -L /software/dk/nangate45/verilog/msim6.2g work.tb_riscv
+vsim -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /tb_riscv/DUT=../netlist/RISC_V_lite.sdf work.tb_riscv
+
+
+
+

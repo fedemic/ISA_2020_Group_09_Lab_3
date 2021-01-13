@@ -1,0 +1,126 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'RISC_V_lite' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : RISC_V_lite
+Version: O-2018.06-SP4
+Date   : Tue Dec 22 11:45:06 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: PIPE_MEM_WB/reg_out_reg[136]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: PIPE_EX_MEM/reg_out_reg[103]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RISC_V_lite        5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  PIPE_MEM_WB/reg_out_reg[136]/CK (DFFR_X1)               0.00       0.00 r
+  PIPE_MEM_WB/reg_out_reg[136]/Q (DFFR_X1)                0.11       0.11 f
+  PIPE_MEM_WB/reg_out[136] (Reg_N176)                     0.00       0.11 f
+  FORWARDING/RD_WB[4] (Forwarding_unit)                   0.00       0.11 f
+  FORWARDING/U19/Z (XOR2_X1)                              0.09       0.20 f
+  FORWARDING/U72/ZN (NOR2_X1)                             0.04       0.25 r
+  FORWARDING/U33/ZN (NAND4_X1)                            0.06       0.31 f
+  FORWARDING/U4/ZN (OR2_X1)                               0.08       0.39 f
+  FORWARDING/U96/ZN (OAI21_X1)                            0.05       0.44 r
+  FORWARDING/U87/ZN (NAND3_X1)                            0.03       0.47 f
+  FORWARDING/U8/ZN (NAND2_X1)                             0.06       0.53 r
+  FORWARDING/sel_mux_op1[0] (Forwarding_unit)             0.00       0.53 r
+  FORWARD_MUX_OP1/sel[0] (Mux_8to1_N32_2)                 0.00       0.53 r
+  FORWARD_MUX_OP1/U197/ZN (INV_X1)                        0.03       0.56 f
+  FORWARD_MUX_OP1/U161/ZN (OR3_X1)                        0.09       0.65 f
+  FORWARD_MUX_OP1/U156/ZN (INV_X1)                        0.04       0.69 r
+  FORWARD_MUX_OP1/U198/ZN (OR4_X1)                        0.04       0.73 r
+  FORWARD_MUX_OP1/U5/ZN (NOR3_X1)                         0.03       0.76 f
+  FORWARD_MUX_OP1/U196/ZN (AOI22_X1)                      0.06       0.82 r
+  FORWARD_MUX_OP1/U3/ZN (NAND2_X1)                        0.03       0.85 f
+  FORWARD_MUX_OP1/out_mux[0] (Mux_8to1_N32_2)             0.00       0.85 f
+  MUX_FORWARD_ACTIVATE_OP1/in_1[0] (Mux_2to1_N32_3)       0.00       0.85 f
+  MUX_FORWARD_ACTIVATE_OP1/U78/ZN (AOI22_X1)              0.05       0.90 r
+  MUX_FORWARD_ACTIVATE_OP1/U77/ZN (INV_X1)                0.03       0.93 f
+  MUX_FORWARD_ACTIVATE_OP1/out_mux[0] (Mux_2to1_N32_3)
+                                                          0.00       0.93 f
+  ALU_UNIT/input_1[0] (ALU)                               0.00       0.93 f
+  ALU_UNIT/r300/A[0] (ALU_DW01_add_0)                     0.00       0.93 f
+  ALU_UNIT/r300/U58/ZN (AND2_X1)                          0.05       0.98 f
+  ALU_UNIT/r300/U1_1/CO (FA_X1)                           0.10       1.08 f
+  ALU_UNIT/r300/U1_2/CO (FA_X1)                           0.10       1.18 f
+  ALU_UNIT/r300/U24/ZN (NAND2_X1)                         0.03       1.21 r
+  ALU_UNIT/r300/U26/ZN (NAND3_X1)                         0.04       1.25 f
+  ALU_UNIT/r300/U30/ZN (NAND2_X1)                         0.03       1.29 r
+  ALU_UNIT/r300/U32/ZN (NAND3_X1)                         0.04       1.32 f
+  ALU_UNIT/r300/U1_5/CO (FA_X1)                           0.09       1.41 f
+  ALU_UNIT/r300/U1_6/CO (FA_X1)                           0.09       1.50 f
+  ALU_UNIT/r300/U1_7/CO (FA_X1)                           0.09       1.59 f
+  ALU_UNIT/r300/U1_8/CO (FA_X1)                           0.09       1.69 f
+  ALU_UNIT/r300/U1_9/CO (FA_X1)                           0.10       1.78 f
+  ALU_UNIT/r300/U54/ZN (NAND2_X1)                         0.03       1.82 r
+  ALU_UNIT/r300/U56/ZN (NAND3_X1)                         0.04       1.86 f
+  ALU_UNIT/r300/U1_11/CO (FA_X1)                          0.09       1.95 f
+  ALU_UNIT/r300/U1_12/CO (FA_X1)                          0.09       2.04 f
+  ALU_UNIT/r300/U1_13/CO (FA_X1)                          0.09       2.13 f
+  ALU_UNIT/r300/U1_14/CO (FA_X1)                          0.09       2.22 f
+  ALU_UNIT/r300/U1_15/CO (FA_X1)                          0.09       2.31 f
+  ALU_UNIT/r300/U1_16/CO (FA_X1)                          0.10       2.41 f
+  ALU_UNIT/r300/U4/ZN (NAND2_X1)                          0.03       2.44 r
+  ALU_UNIT/r300/U6/ZN (NAND3_X1)                          0.04       2.48 f
+  ALU_UNIT/r300/U1_18/CO (FA_X1)                          0.10       2.58 f
+  ALU_UNIT/r300/U12/ZN (NAND2_X1)                         0.03       2.61 r
+  ALU_UNIT/r300/U14/ZN (NAND3_X1)                         0.04       2.65 f
+  ALU_UNIT/r300/U18/ZN (NAND2_X1)                         0.03       2.69 r
+  ALU_UNIT/r300/U20/ZN (NAND3_X1)                         0.04       2.72 f
+  ALU_UNIT/r300/U1_21/CO (FA_X1)                          0.09       2.81 f
+  ALU_UNIT/r300/U1_22/CO (FA_X1)                          0.10       2.91 f
+  ALU_UNIT/r300/U48/ZN (NAND2_X1)                         0.03       2.95 r
+  ALU_UNIT/r300/U50/ZN (NAND3_X1)                         0.04       2.98 f
+  ALU_UNIT/r300/U1_24/CO (FA_X1)                          0.10       3.08 f
+  ALU_UNIT/r300/U36/ZN (NAND2_X1)                         0.03       3.12 r
+  ALU_UNIT/r300/U38/ZN (NAND3_X1)                         0.04       3.15 f
+  ALU_UNIT/r300/U1_26/CO (FA_X1)                          0.09       3.24 f
+  ALU_UNIT/r300/U1_27/CO (FA_X1)                          0.09       3.33 f
+  ALU_UNIT/r300/U1_28/CO (FA_X1)                          0.09       3.43 f
+  ALU_UNIT/r300/U1_29/CO (FA_X1)                          0.10       3.52 f
+  ALU_UNIT/r300/U42/ZN (NAND2_X1)                         0.03       3.56 r
+  ALU_UNIT/r300/U44/ZN (NAND3_X1)                         0.04       3.60 f
+  ALU_UNIT/r300/U1_31/S (FA_X1)                           0.13       3.73 r
+  ALU_UNIT/r300/SUM[31] (ALU_DW01_add_0)                  0.00       3.73 r
+  ALU_UNIT/U209/ZN (AOI21_X1)                             0.03       3.75 f
+  ALU_UNIT/U5/ZN (NAND2_X1)                               0.03       3.78 r
+  ALU_UNIT/output_result[31] (ALU)                        0.00       3.78 r
+  PIPE_EX_MEM/reg_in[103] (Reg_N180)                      0.00       3.78 r
+  PIPE_EX_MEM/U364/ZN (NAND2_X1)                          0.02       3.81 f
+  PIPE_EX_MEM/U363/ZN (OAI21_X1)                          0.03       3.84 r
+  PIPE_EX_MEM/reg_out_reg[103]/D (DFFR_X1)                0.01       3.84 r
+  data arrival time                                                  3.84
+
+  clock MY_CLK (rise edge)                                3.95       3.95
+  clock network delay (ideal)                             0.00       3.95
+  clock uncertainty                                      -0.07       3.88
+  PIPE_EX_MEM/reg_out_reg[103]/CK (DFFR_X1)               0.00       3.88 r
+  library setup time                                     -0.03       3.85
+  data required time                                                 3.85
+  --------------------------------------------------------------------------
+  data required time                                                 3.85
+  data arrival time                                                 -3.84
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
